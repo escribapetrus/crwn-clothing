@@ -1,15 +1,19 @@
-import React from 'react'
+import React from 'react';
+import CollectionItem from "./Collection-Item"
+import "./Preview-Collection.scss"
 
 function PreviewCollection({title, items, id}) {
     return (
-        <div>
-            {items
-            .filter((item, idx) => idx < 4)
-            .map(item => (
-                <div key={item.id}>
-                    <h2>{item.name}</h2>
-                </div>
-            ))}
+        <div className="Preview-Collection">
+            <h1 className="title">{title}</h1>
+            <div className="preview">
+                {items
+                .filter((item, idx) => idx < 4)
+                .map(({id, ...itemProps}) => (
+                    <CollectionItem key={id} {...itemProps}/>
+                ))}
+            </div>
+            
         </div>
     )
 }
