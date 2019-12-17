@@ -4,12 +4,7 @@ import Home from "./pages/Home"
 import Shop from "./pages/Shop"
 import Header from "./components/Header"
 import './App.css';
-
-const Hats = () => (
-  <div>
-    <h1>Hats</h1>
-  </div>
-)
+import SignIn from './pages/Sign-In';
 
 function App() {
   return (
@@ -18,8 +13,8 @@ function App() {
         <Header/>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/hats" component={Hats}/>
           <Route path="/shop" component={Shop}/>
+          <Route path="/signin" component={SignIn}/>
         </Switch>
       </Router>
     
