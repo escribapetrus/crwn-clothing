@@ -50,8 +50,10 @@ export class SignInForm extends Component {
                         onChange={this.handleChange} 
                         value={this.state.password}
                         label="password"/>
-                    <Button type="submit">sign in</Button>
-                    <Button onClick={signInWithGoogle}>sign in with google</Button>
+                    <div className="buttons">
+                        <Button type="submit">sign in</Button>
+                        <Button isGoogleSignIn onClick={signInWithGoogle}>sign in with google</Button>
+                    </div>
                 </form>
             </div>
         )
