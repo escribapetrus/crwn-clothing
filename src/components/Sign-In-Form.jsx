@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import FormInput from "./Form-Input";
 import Button from "./Button";
+
+import {signInWithGoogle} from '../firebase/utils'
+
 import "./Sign-In-Form.scss";
 
 export class SignInForm extends Component {
@@ -47,7 +50,8 @@ export class SignInForm extends Component {
                         onChange={this.handleChange} 
                         value={this.state.password}
                         label="password"/>
-                    <Button type="submit">Sign in</Button>
+                    <Button type="submit">sign in</Button>
+                    <Button onClick={signInWithGoogle}>sign in with google</Button>
                 </form>
             </div>
         )
