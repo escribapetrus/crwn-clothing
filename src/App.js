@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import {connect} from 'react-redux'
 import Home from "./pages/Home"
 import Shop from "./pages/Shop"
+import Checkout from "./pages/Checkout"
 import Header from "./components/Header"
 import './App.css';
 import SignIn from './pages/Sign-In';
@@ -49,6 +50,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/shop" component={Shop}/>
+            <Route exact path="/checkout" component={Checkout}/>
             <Route exact path="/signin" render={
               () =>
                 this.props.currentUser ? (<Redirect to="/"/>)
