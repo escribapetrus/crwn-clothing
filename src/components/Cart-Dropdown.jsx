@@ -4,11 +4,12 @@ import CartItem from "./Cart-Item";
 import {selectCartItems} from '../redux/cartSelector'
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
+import {toggleCartShow} from '../redux/cartAction'
 import {withRouter} from 'react-router-dom';
 
 import "./Cart-Dropdown.scss";
 
-function CartDropdown({cartItems, history}) {
+function CartDropdown({cartItems, history, dispatch}) {
     return (
         <div className="Cart-Dropdown">
             <div className="cart-items">
@@ -23,7 +24,12 @@ function CartDropdown({cartItems, history}) {
                     <span className="empty-message ">Your cart is empty.</span>
                 }
             </div>
-            <Button onClick={() => history.push('/checkout')} inverted>go to checkout</Button>
+            <Button 
+                onClick={() => {
+                    history.push('/checkout');
+                    dispatch(toggleCartShow());
+                }} 
+                inverted>go to checkout</Button>
         </div>
     )
 }
