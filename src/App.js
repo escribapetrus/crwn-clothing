@@ -30,7 +30,7 @@ class App extends React.Component {
           })
         });
       } else {
-        setCurrentUser(userAuth)
+        setCurrentUser(userAuth);
       }
       //createUserProfileDocument(user);
       // this.setState({currentUser: user});
